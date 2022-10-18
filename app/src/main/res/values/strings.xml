@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Releaser Tracker</string>
+    <string name="main_page_selected">%s page is selected</string>
+
+    <string-array name="releaser_type">
+        <item>FXC</item>
+        <item>5000</item>
+        <item>M1</item>
+        <item>M2</item>
+        <item>K35</item>
+    </string-array>
+
+    <string-array name="releaser">
+        <item>FXC</item>
+        <item>M1</item>
+        <item>5000</item>
+        <item>FXC</item>
+    </string-array>
+
+    <string-array name="id">
+        <item>745575</item>
+        <item>747865</item>
+        <item>536775</item>
+        <item>142311</item>
+    </string-array>
+
+</resources>

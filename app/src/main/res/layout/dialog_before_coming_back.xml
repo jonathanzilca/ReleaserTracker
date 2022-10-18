@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="230dp">
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_margin="1dp"
+        android:background="@drawable/black_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_margin="1dp"
+        android:background="@drawable/black_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_margin="1dp"
+        android:background="@drawable/black_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_margin="1dp"
+        android:background="@drawable/black_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="300dp"
+        android:layout_height="230dp"
+        android:layout_gravity="center"
+        android:layoutDirection="ltr"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="300dp"
+            android:layout_height="230dp"
+            android:background="#2B2B2B">
+
+            <TextView
+                android:id="@+id/ReleaserTitleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="תהליך החזרה לשימוש:"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.066" />
+
+
+            <Button
+                android:id="@+id/toAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_stroke"
+                android:text="הוצא לביצוע"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ReleaserTitleButton"
+                app:layout_constraintVertical_bias="0.874" />
+
+            <TextView
+                android:id="@+id/inspectorName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="25dp"
+                android:text="שם המבקר:"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ReleaserTitleButton" />
+
+            <EditText
+                android:id="@+id/inspectorNameAnswer"
+                android:layout_width="142dp"
+                android:layout_height="35dp"
+                android:paddingEnd="5dp"
+                android:drawableEnd="@drawable/ic_inspector"
+                android:background="@drawable/custom_input"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/inspectorName"
+                app:layout_constraintEnd_toStartOf="@+id/inspectorName"
+                app:layout_constraintTop_toTopOf="@+id/inspectorName" />
+
+
+            <TextView
+                android:id="@+id/takerDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:text="תאריך ביקורת:"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inspectorName" />
+
+            <EditText
+                android:id="@+id/takerDateAnswer"
+                android:layout_width="126dp"
+                android:layout_height="35dp"
+                android:paddingEnd="5dp"
+                android:paddingLeft="20dp"
+                android:drawableEnd="@drawable/ic_better_calander"
+                android:background="@drawable/custom_input"
+                android:textColor="@color/white"
+                android:focusable="false"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/takerDate"
+                app:layout_constraintEnd_toStartOf="@+id/takerDate"
+                app:layout_constraintTop_toTopOf="@+id/takerDate" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
