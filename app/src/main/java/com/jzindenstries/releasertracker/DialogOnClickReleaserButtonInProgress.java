@@ -7,6 +7,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class DialogOnClickReleaserButtonInProgress {
     TextView ReleaserTitle, id, Answer1, Answer2;
     Button exitButton, edit;
+    ImageView releaserImage;
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void showDialogOnClickReleaserButtonInProgress(Activity activity, ArrayList<GoToProgress> dataProgress , int position, final DialogOnClickReleaserButtonInProgress.onAddOrRemove listener){
         final Dialog dialog = new Dialog(activity);
@@ -42,6 +44,24 @@ public class DialogOnClickReleaserButtonInProgress {
         id.setPaintFlags(id.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         Answer1 = dialog.findViewById(R.id.Answer1);
         Answer2 = dialog.findViewById(R.id.Answer2);
+        releaserImage= dialog.findViewById(R.id.releaserImage);
+
+        if(type.contains("F")){
+            releaserImage.setImageResource(R.drawable.good_fxc);
+            releaserImage.getLayoutParams().height = 480;
+            releaserImage.getLayoutParams().width = 480;
+            releaserImage.requestLayout();
+        } else if(type.contains("2")){
+            releaserImage.setImageResource(R.drawable.good_m2);
+            releaserImage.getLayoutParams().height = 850;
+            releaserImage.getLayoutParams().width = 850;
+            releaserImage.requestLayout();
+        } else{
+            releaserImage.setImageResource(R.drawable.good_m1);
+            releaserImage.getLayoutParams().height = 730;
+            releaserImage.getLayoutParams().width = 730;
+            releaserImage.requestLayout();
+        }
 
         // setting data from dataAction array on dialog
         ReleaserTitle.setText("מנתק:  " + type);

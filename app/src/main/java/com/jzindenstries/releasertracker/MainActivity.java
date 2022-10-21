@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity{
     DataBaseHelperInHouse dataBaseHelperInHouse;
     DataBaseHelperInAction dataBaseHelperInAction;
     DataBaseHelperInProgress dataBaseHelperInProgress;
-    ArrayList<GoToHouse> dataHouse;
+    int images[]={R.drawable.good_fxc,R.drawable.good_m2,R.drawable.good_m1};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

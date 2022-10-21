@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 public class DialogOnClickReleaserButtonInHouse {
     TextView ReleaserTitle, Answer1, Answer2, id;
     Button exitButton, edit;
+    ImageView releaserImage;
     public void showDialogReleaserButton(Activity activity, ArrayList<GoToHouse> dataHouse , int position, final DialogOnClickReleaserButtonInHouse.onAddOrRemove listener){
         final Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -26,6 +28,7 @@ public class DialogOnClickReleaserButtonInHouse {
         String date = dataHouse.get(position).getDate();
         String name = dataHouse.get(position).getName();
 
+
         // define items
         edit = dialog.findViewById(R.id.edit);
         Answer1 = dialog.findViewById(R.id.Answer1);
@@ -34,6 +37,25 @@ public class DialogOnClickReleaserButtonInHouse {
         ReleaserTitle.setPaintFlags(ReleaserTitle.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         id = dialog.findViewById(R.id.id);
         id.setPaintFlags(id.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        releaserImage= dialog.findViewById(R.id.releaserImage);
+
+        if(type.contains("F")){
+            releaserImage.setImageResource(R.drawable.good_fxc);
+            releaserImage.getLayoutParams().height = 480;
+            releaserImage.getLayoutParams().width = 480;
+            releaserImage.requestLayout();
+        } else if(type.contains("2")){
+            releaserImage.setImageResource(R.drawable.good_m2);
+            releaserImage.getLayoutParams().height = 850;
+            releaserImage.getLayoutParams().width = 850;
+            releaserImage.requestLayout();
+        } else{
+            releaserImage.setImageResource(R.drawable.good_m1);
+            releaserImage.getLayoutParams().height = 730;
+            releaserImage.getLayoutParams().width = 730;
+            releaserImage.requestLayout();
+        }
 
         // setting data from dataHouse array on dialog
         id.setText("מספר סידורי:  "+idNumber );

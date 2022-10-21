@@ -25,7 +25,6 @@ import java.util.List;
 public class EditOnClickedAction {
     Button toAction;
     EditText inspectorNameAnswer, inspectorDateAnswer, serialNumberAnswer, actionNameAnswer, takerNameAnswer, takerDateAnswer;
-    TextView ReleaserTitleButton;
     Spinner releaserTypeSpinner;
     private DatePickerDialog.OnDateSetListener mDateSetListener, mDateSetListener1;
     public void showEditOnClickedAction(Activity activity, ArrayList<GoToAction> dataAction, int position, final DialogBeforeComingBack.onAddOrRemove listener){

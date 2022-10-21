@@ -7,6 +7,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 public class DialogOnClickReleaserButtonInAction {
     TextView ReleaserTitle, actionNameAnswer, takerNameAnswer, id, takerDateAnswer, inspectorNameAnswer, inspectorDateAnswer;
     Button exitButton, edit;
+    ImageView releaserImage;
     public void showDialogReleaserButton(Activity activity, ArrayList<GoToAction> dataAction , int position, final DialogOnClickReleaserButtonInAction.onAddOrRemove listener){
         final Dialog dialog = new Dialog(activity);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -40,6 +42,8 @@ public class DialogOnClickReleaserButtonInAction {
         String inspectorName = dataAction.get(position).getInspectorName();
         String inspectorDate = dataAction.get(position).getInspectorDate();
 
+
+
         // define items
         ReleaserTitle = dialog.findViewById(R.id.ReleaserTitleButton);
         ReleaserTitle.setPaintFlags(ReleaserTitle.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -51,6 +55,24 @@ public class DialogOnClickReleaserButtonInAction {
         inspectorNameAnswer = dialog.findViewById(R.id.inspectorNameAnswer);
         inspectorDateAnswer = dialog.findViewById(R.id.inspectorDateAnswer);
         edit = dialog.findViewById(R.id.edit);
+        releaserImage= dialog.findViewById(R.id.releaserImage);
+
+        if(type.contains("F")){
+            releaserImage.setImageResource(R.drawable.good_fxc);
+            releaserImage.getLayoutParams().height = 480;
+            releaserImage.getLayoutParams().width = 480;
+            releaserImage.requestLayout();
+        } else if(type.contains("2")){
+            releaserImage.setImageResource(R.drawable.good_m2);
+            releaserImage.getLayoutParams().height = 850;
+            releaserImage.getLayoutParams().width = 850;
+            releaserImage.requestLayout();
+        } else{
+            releaserImage.setImageResource(R.drawable.good_m1);
+            releaserImage.getLayoutParams().height = 730;
+            releaserImage.getLayoutParams().width = 730;
+            releaserImage.requestLayout();
+        }
 
         // setting data from dataAction array on dialog
         ReleaserTitle.setText("מנתק:  "+type);
